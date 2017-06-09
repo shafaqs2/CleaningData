@@ -39,4 +39,6 @@ for(i in 1:dim(activity_labels)[1]){
 library(reshape2)
 data_ind<- melt(data_f, id=names(data_f)[1:2], measure.vars=names(data_f)[3:dim(data_f)[2]])
 subject_mean<- dcast(data_ind, subject+activity~variable, mean)
-write.table(subject_mean, "./03 - Getting and Cleaning Data/DataSet_Mean.txt", row.name=FALSE)
+
+#Writing the resutling mean to a file.
+write.table(subject_mean, "./03 - Getting and Cleaning Data/DataSet_Mean.txt")
